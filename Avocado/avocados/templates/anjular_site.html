@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" ng-app="myApp">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src = "{% static 'avocado.js' %}" ></script>
+    <link rel="stylesheet" href=" {% static 'avocado.css' %}">
+</head>
+<body>
+<h1> What is the Avocado's price ? <span><img src="{% static 'Avocados-3d84a3a.jpg' %}"> </span></h1>
+
+<div ng-controller="formCtrl">
+{% verbatim %}
+  <form>
+      Total volume: <input type="text" ng-model="forminput['total_volume']">
+      4046: <input type="text" ng-model="forminput['t_4046']">
+      4225: <input type="text" ng-model="forminput['t_4225']">
+      4770: <input type="text" ng-model="forminput['t_4770']">
+      Total bags: <input type="text" ng-model="forminput['total_bags']">
+      Small bags: <input type="text" ng-model="forminput['small_bags']">
+      Large bags: <input type="text" ng-model="forminput['large_bags']">
+      X Large bags: <input type="text" ng-model="forminput['x_large_bags']">
+      Type: <select ng-model="forminput['type']" ng-options="type for type in types"></select>
+      Year: <select ng-model="forminput['year']" ng-options="x for x in year(1970)"></select>
+      Region in the US: <input type="text" ng-model="forminput['region']">
+      <button ng-click="submit()">Submit</button>
+
+  </form>
+    <p class="error" ng-show="is_valid(result)"> <span ng-repeat="x in data"> Error: {{x[0]}}</span></p>
+    <p ng-show="!(is_valid(result))">The avocado's price is <span ng-bind="data['average_price']"></span> </p>
+{% endverbatim %}
+
+</div>
+
+
+
+</body>
+</html>
