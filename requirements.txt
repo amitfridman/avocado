@@ -1,0 +1,5 @@
+django
+django_countries
+django_rest_framework
+django_cors_headers
+pandas
