@@ -6,6 +6,7 @@ COPY "Avocado/" "Avocado_site/"
 EXPOSE 8000
 RUN pip install -r requirements.txt
 WORKDIR  /Avocado_site/
+RUN npm install -g @angular/cli
 RUN python manage.py migrate
 RUN chown :www-data  /
 RUN chown :www-data db.sqlite3
