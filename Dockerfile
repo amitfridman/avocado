@@ -6,7 +6,7 @@ COPY "Avocado/" "Avocado_site/"
 EXPOSE 8000
 RUN pip install -r requirements.txt
 WORKDIR  /Avocado_site/
-RUN curl -sL https://rpm.nodesource.com/setup_10.x | bash -
+RUN curl -sL https://rpm.nodesource.com/setup_10.x | bash 
 RUN yum install nodejs
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 RUN npm install -g @angular/cli
