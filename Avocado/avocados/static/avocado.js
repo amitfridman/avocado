@@ -33,7 +33,7 @@ app.controller('formCtrl', function($scope,$http) {
 
     $scope.submit = function(){
 
-      $http.post("http://127.0.0.1:8000/avocado/",$scope.forminput)
+      $http.post("http://23.97.157.59:8000/avocado/",$scope.forminput)
           .then(function mySuccess(response) {
             $scope.data = response.data;
             $scope.result = response.statusText;
