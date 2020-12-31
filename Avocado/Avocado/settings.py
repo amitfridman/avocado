@@ -128,4 +128,4 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT= '/Avocado/static'
 
-STATICFILES_DIRS = [BASE_DIR / "static",os.path.join(BASE_DIR, '/avocados/static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, '/avocados/static')]
