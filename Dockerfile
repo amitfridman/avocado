@@ -10,6 +10,7 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
 RUN apt install nodejs
 RUN npm install -g @angular/cli
 RUN python manage.py migrate
+RUN python manage.py collectstatic
 RUN chown :www-data  /
 RUN chown :www-data db.sqlite3
 RUN chmod 664 db.sqlite3
