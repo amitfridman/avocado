@@ -128,4 +128,4 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT= '/Avocado/static'
 
-STATICFILES_DIRS = ['Avocado_site/avocados/static']
+STATICFILES_DIRS = ['/avocados/static']
