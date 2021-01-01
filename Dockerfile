@@ -6,13 +6,10 @@ COPY "Avocado/" "Avocado_site/"
 EXPOSE 8000
 RUN pip install -r requirements.txt
 WORKDIR  /Avocado_site/
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
-RUN apt install nodejs
-RUN npm install -g @angular/cli
 RUN python manage.py migrate
 RUN python manage.py collectstatic --noinput
 RUN chown :www-data  /
 RUN chown :www-data db.sqlite3
 RUN chmod 664 db.sqlite3
 USER 1001
-CMD ["python", "manage.py", "runserver","0.0.0.0:8000"]
+CMD ["python", "manage.py", "runserver","0.0.0.0:8443"]
