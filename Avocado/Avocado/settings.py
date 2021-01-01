@@ -25,7 +25,7 @@ SECRET_KEY = '0g(_^t^-h=jb$*9id-1$)8uq4u0a#=d!5$rj0)qr(irh176**&'
 SECURE_SSL_REDIRECT = True
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-
+DEBUG_PROPAGATE_EXCEPTIONS = True
 
 ALLOWED_HOSTS=['*']
 CORS_ORIGIN_ALLOW_ALL = True
