@@ -12,4 +12,4 @@ RUN chown :www-data  /
 RUN chown :www-data db.sqlite3
 RUN chmod 664 db.sqlite3
 USER 1001
-CMD ["python", "manage.py", "runserver","0.0.0.0:8443"]
+CMD ["python", "manage.py", "runserver","0.0.0.0:8000"]
