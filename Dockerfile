@@ -10,8 +10,8 @@ WORKDIR  /Avocado_site/
 RUN python manage.py makemigrations
 RUN python manage.py migrate
 RUN python manage.py collectstatic --noinput
-USER 0
-RUN chmod 777 db.sqlite3
+RUN chmod 777 /Avocado_site/db.sqlite3
+RUN chmod 777 /Avocado_site
 # RUN chown root:www-data /Avocado_site
 # RUN chown root:www-data /Avocado_site/db.sqlite3
 CMD ["python", "manage.py", "runserver","0.0.0.0:8000"]
