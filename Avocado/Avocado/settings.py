@@ -129,7 +129,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT= 'Avocado/static'
+STATIC_ROOT= '/Avocado/static'
 
-STATICFILES_DIRS = [os.path.join(PROJECT_DIR, '../avocados/static')]
+STATICFILES_DIRS = ['avocados/static']
 
