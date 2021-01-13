@@ -17,7 +17,7 @@ from django.views.static import serve
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-
+from django.views.generic.base import RedirectView
 from django.conf.urls import url
 from django.views.generic import TemplateView
 
@@ -39,4 +39,5 @@ urlpatterns = [
     path('', include('avocados.urls')),
     url(r'^(?P<template_name>\w+)$', SimpleStaticView.as_view(template_name='anjular_site'), name='avocados'),
     url(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
+    url("favicon.ico", RedirectView.as_view(url=r'^static/favicon.ico')),
  ]
