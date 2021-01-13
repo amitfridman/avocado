@@ -25,11 +25,7 @@ SECRET_KEY = '0g(_^t^-h=jb$*9id-1$)8uq4u0a#=d!5$rj0)qr(irh176**&'
 SECURE_SSL_REDIRECT = True
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-<<<<<<< HEAD
-
-=======
 DEBUG_PROPAGATE_EXCEPTIONS = True
->>>>>>> 9eb0d21076b2587f311b9772b7c0e4ec261e4338
 
 ALLOWED_HOSTS = ['*']
 CORS_ORIGIN_ALLOW_ALL = True
@@ -130,12 +126,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-<<<<<<< HEAD
 STATIC_ROOT= 'Avocado/static'
 
 STATICFILES_DIRS = [os.path.join(PROJECT_DIR, '../avocados/static')]
-=======
-STATIC_ROOT= '/Avocado/static'
 
-STATICFILES_DIRS = ['avocados/static']
->>>>>>> 9eb0d21076b2587f311b9772b7c0e4ec261e4338
