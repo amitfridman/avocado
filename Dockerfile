@@ -9,8 +9,8 @@ RUN pip install --index-url https://test.pypi.org/simple/ --no-deps avocado_mode
 WORKDIR  /Avocado_site/
 RUN python manage.py migrate
 RUN python manage.py collectstatic --noinput
-RUN chown :www-data /Avocado_site
-RUN chown :www-data /Avocado_site/db.sqlite3
+# RUN chown :www-data /Avocado_site
+# RUN chown :www-data /Avocado_site/db.sqlite3
 RUN chmod 777 /Avocado_site/db.sqlite3
 USER 1001
 CMD ["python", "manage.py", "runserver","0.0.0.0:8000"]
