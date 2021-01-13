@@ -32,7 +32,6 @@ app.controller('formCtrl', function($scope,$http) {
     };
 
     $scope.submit = function(){
-
       $http.post("http://0.0.0.0:8000/avocado/",$scope.forminput)
           .then(function mySuccess(response) {
             $scope.data = response.data;
