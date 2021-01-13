@@ -24,10 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '0g(_^t^-h=jb$*9id-1$)8uq4u0a#=d!5$rj0)qr(irh176**&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
-ALLOWED_HOSTS=['*']
+ALLOWED_HOSTS = ['*']
 CORS_ORIGIN_ALLOW_ALL = True
 
 PROJECT_DIR=os.path.dirname(__file__)
@@ -126,6 +126,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT= os.path.join(PROJECT_DIR,'/avocados/static')
+STATIC_ROOT= 'Avocado/static'
 
-STATICFILES_DIRS = [os.path.join(PROJECT_DIR, '/static')]
+STATICFILES_DIRS = [os.path.join(PROJECT_DIR, '../avocados/static')]

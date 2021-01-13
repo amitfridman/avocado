@@ -5,7 +5,12 @@ from rest_framework.response import Response
 from rest_framework.renderers import TemplateHTMLRenderer
 from .models import Avocado
 from .serializers import AvocadoSerializer
-
+import pandas as pd
+from joblib import load
+import importlib_resources as resources
+from model_pkg.modeling_avocados import pred_price
+from collections import OrderedDict
+import os
 
 @api_view(['POST'])
 def avocado_predict(request):
@@ -23,5 +28,15 @@ def avocado_predict(request):
 
 def calc_average_price(data):
     # todo: create an actual model for prediction
-    data['average_price'] = 1.5
-    return data['average_price']
+    pairs = {'total_volume': 'Total Volume', 'total_bags': 'Total Bags', 'small_bags': 'Small Bags',
+             'large_bags': 'Large Bags', 'x_large_bags': 'XLarge Bags', 'type': 'type', 'year': 'year',
+             'region': 'region', 't_4046': '4046', 't_4225': '4225', 't_4770': '4770'}
+    data_reordered = {}
+    for key in data:
+        if key == 'id':
+            continue
+        data_reordered[pairs[key]] = [data[key]]
+    data['average_price'] = pred_price(pd.DataFrame(data_reordered,columns=['Total Volume', '4046', '4225', '4770',
+                                                                            'Total Bags', 'Small Bags', 'Large Bags',
+                                                                            'XLarge Bags', 'type', 'year','region']))
+    return data['average_price'][0]
