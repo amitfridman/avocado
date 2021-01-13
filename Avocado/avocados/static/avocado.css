@@ -1,0 +1,48 @@
+form {
+    background-color: darkolivegreen;
+    color: mintcream;
+    font: 1em bold Calibri sans-serif;
+    padding: 0.4em;
+    display: block;
+    text-align: left;
+}
+button {
+    border: mintcream solid 0.2em;
+    border-radius: 0.3em ;
+    background-color: mintcream ;
+    padding: 0.3em;
+    margin: 0.2em;
+    position: relative;
+    left: 80%;
+    font: 0.95em  Calibri sans-serif;
+}
+input, select{
+    position: center;
+    box-sizing: border-box;
+    border: mintcream solid 0.2em;
+    border-radius: 0.3em;
+    margin: 0.1% 10%;
+    width: 60%;
+    padding: 0.3em;
+    background-color: mintcream;
+    display: block;
+    font: 1em  Calibri sans-serif;
+}
+h1{
+    font: 2em bold Calibri sans-serif;
+    color: darkolivegreen;
+    text-align: center;
+}
+img {
+    overflow: auto;
+    width: 2.5%;
+    height: 2.5%;
+}
+p {
+    color: darkolivegreen;
+    font: 1.5em bold Calibri sans-serif;
+}
+p.error {
+    color: red;
+    font: 1.5em bold Calibri sans-serif;
+}
