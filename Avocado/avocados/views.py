@@ -7,7 +7,6 @@ from .models import Avocado
 from .serializers import AvocadoSerializer
 import pandas as pd
 from joblib import load
-import importlib_resources as resources
 from model_pkg.modeling_avocados import pred_price
 from collections import OrderedDict
 import os
