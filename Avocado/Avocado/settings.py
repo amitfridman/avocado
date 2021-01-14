@@ -33,7 +33,7 @@ DEBUG_PROPAGATE_EXCEPTIONS = True
 ALLOWED_HOSTS = ['*']
 CORS_ORIGIN_ALLOW_ALL = True
 
-PROJECT_DIR=os.path.dirname(__file__)
+PROJECT_DIR = os.path.dirname(__file__)
 # Application definition
 
 INSTALLED_APPS = [
@@ -96,16 +96,20 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.\
+        UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.\
+        MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.\
+        CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.\
+        NumericPasswordValidator',
     },
 ]
 
@@ -129,7 +133,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT= '/Avocado/static'
+STATIC_ROOT = '/Avocado/static'
 
 STATICFILES_DIRS = ['avocados/static']
-

@@ -1,10 +1,6 @@
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
 from rest_framework.test import APIRequestFactory
 from avocados.views import avocado_predict
 from rest_framework import status
-import datetime
-from django.utils import timezone
 import pytest
 
 
@@ -108,14 +104,12 @@ def test_valid(test_json_valid):
         response = avocado_predict(request)
         assert response.status_code == status.HTTP_200_OK, "failed"
 
+
 @pytest.mark.django_db
 def test_invalid(test_json_invalid):
     factory = APIRequestFactory()
     for test in test_json_invalid:
         request = factory.post('/avocados/', test, format='json')
         response = avocado_predict(request)
-        assert response.status_code == status.HTTP_400_BAD_REQUEST, "created successfully although it" \
-                                                                    " wasn't supposed to"
-
-
-
+        assert response.status_code == status.HTTP_400_BAD_REQUEST, \
+            "created successfully although it wasn't supposed to"
